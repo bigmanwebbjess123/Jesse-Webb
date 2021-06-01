@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             BackgroundColor="{AppThemeBinding Dark=Black, Light=White}" 
+             xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar" 
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" mc:Ignorable="d" x:Class="Mobile_App.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Text="Settings"
+            Clicked="ToolbarItem_Clicked" 
+            Order="Secondary"
+            ></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <!-- Place new controls here -->
+        <controls:Calendar DatesBackgroundColor="{AppThemeBinding Dark=Black, Light=White}" 
+                           DatesTextColor="{AppThemeBinding Dark=White, Light=Black}" 
+                           BackgroundColor="{AppThemeBinding Dark=Black, Light=White}" 
+                           Padding="10,0,10,0" SelectedBorderWidth="4" DisabledBorderColor="Black"
+                           ShowNumberOfWeek="false" StartDay="Sunday" TitleLabelTextColor="Purple" 
+                           TitleLeftArrowTextColor="MediumVioletRed" TitleRightArrowTextColor="MediumVioletRed" 
+                           SpecialDates="{Binding linkedNames}"  DateCommand="{Binding DateChosen}" />
+        <Label Text="Welcome to the Birthday App!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+        <Button Text="Add a birthday" AnchorX="1" AnchorY="1" Clicked="NavigateButton_OnClicked" />
+        <ListView HeightRequest="250" WidthRequest="50" BackgroundColor="{AppThemeBinding Dark=Black, Light=#444343}" 
+                  x:Name="birthdayListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell                        
+                              Text="{Binding FullName}"
+                              Detail="{Binding Date}"
+                              DetailColor="YellowGreen">
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
+
+
+

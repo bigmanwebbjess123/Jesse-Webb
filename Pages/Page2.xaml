@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile_App.Page2"
+             BackgroundColor="{AppThemeBinding Dark=Black, Light=White}">
+    
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Label AbsoluteLayout.LayoutBounds="60,80,150,30" 
+                   Text="Dark Mode " 
+                   FontSize="Medium" 
+                   TextColor="{AppThemeBinding Dark=White, Light=Gray}"></Label>
+            <Switch x:Name="DarkModeSwitch" 
+                    AbsoluteLayout.LayoutBounds="170,68,100,50" 
+                    Toggled="DarkModeSwitch_Toggled"
+                    IsToggled="{Binding SwitchMe}"></Switch>
+            <Label AbsoluteLayout.LayoutBounds="60,140,150,30" 
+                   Text="Mute Audio " 
+                   FontSize="Medium" 
+                   TextColor="{AppThemeBinding Dark=White, Light=Gray}"></Label>
+            <Switch x:Name="MuteSwitch"
+                    AbsoluteLayout.LayoutBounds="170,130,100,50" 
+                    Toggled="MuteSwitch_Toggled"
+                    ></Switch>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
+    
+    
+    
